@@ -8,7 +8,7 @@ function Vehicle(x, y) {
     this.acc = createVector();
     //size
     this.r = 8;
-    this.maxspeed = 5;
+    this.maxspeed = 2; // def 5
     this.maxforce = 0.3;
 }
 
