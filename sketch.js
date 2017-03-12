@@ -22,7 +22,7 @@ function setup() {
   // text("Gina", 100, 200);
 
   //uso textToPoints per creare la scritta con i punti
-  var points = font.textToPoints ('Computerart', 50, 170, 100, {sampleFactor: 0.15});
+  var points = font.textToPoints ('Computerart', 40, 170, 100, {sampleFactor: 0.20});
 
   for (var i = 0; i < points.length; i++){
     var pt = points[i];
