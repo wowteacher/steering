@@ -38,7 +38,7 @@ Vehicle.prototype.update = function() {
 
 Vehicle.prototype.show = function() {
 
-    stroke(27, 153, 139, 15); // jungle green
+    stroke(27, 153, 139, 45); // jungle green
     strokeWeight(3);
     point(this.pos.x, this.pos.y);
 }

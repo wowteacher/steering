@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background(45,48,71, 20); //gunmetal
+  background(45,48,71, 10); //gunmetal
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors();
