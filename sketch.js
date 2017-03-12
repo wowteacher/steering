@@ -1,7 +1,7 @@
 // cc 59
 
 var font;
-var vehicles [];
+var vehicles = [];
 
 function preload() {
     font = loadFont('RubikMonoOne-Regular.ttf');
