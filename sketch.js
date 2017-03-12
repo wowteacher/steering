@@ -1,6 +1,7 @@
 // cc 59
 
 var font;
+var vehicles [];
 
 function preload() {
     font = loadFont('RubikMonoOne-Regular.ttf');
@@ -8,7 +9,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600,300);
+  createCanvas(800,300);
   background(45,48,71); //gunmetal
   // textFont(font);
   // textSize(150);
@@ -21,13 +22,22 @@ function setup() {
 
   for (var i = 0; i < points.length; i++){
     var pt = points[i];
-    stroke(27, 153, 139); // jungle green
-    strokeWeight(8);
-    point(pt.x,pt.y);
+    //disegn i punti basandomi sul constructor
+    var vehicle = new Vehicle(pt.x, pt.y);
+    //aggiungo all'array
+    vehicles.push(vehicle);
+    // stroke(27, 153, 139); // jungle green
+    // strokeWeight(8);
+    // point(pt.x,pt.y);
   }
 
 }
 
 function draw() {
-
+  background(45,48,71); //gunmetal
+  for (var i = 0; i < vehicles.length; i++) {
+    var v = vehicles[i];
+    v.update();
+    v.show();
+  }
 }
