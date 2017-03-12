@@ -3,7 +3,7 @@
 var font;
 
 function preload() {
-  font = loadFont("data/AvenirNextLTPro-Demi.otf", arial);
+  font = loadFont("AvenirNextLTPro-Demi.otf");
 }
 
 function setup() {
