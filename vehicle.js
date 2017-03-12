@@ -8,17 +8,20 @@ function Vehicle(x, y) {
     this.acc = createVector();
     //size
     this.r = 8;
-    this.maxspeed = 2; // def 5
-    this.maxforce = 0.3;
+    this.maxspeed = 10; // def 5
+    this.maxforce = 1;
 }
 
 
 Vehicle.prototype.behaviors = function() {
-    var arrive = this.seek(this.target);
-    this.applyForce(arrive);
-
+    var arrive = this.arrive(this.target);
     var mouse = createVector(mouseX, mouseY);
     var flee = this.flee(mouse);
+    
+    arrive.mult(1);
+    flee.mult(5);
+
+    this.applyForce(arrive);
     this.applyForce(flee);
 }
 
@@ -68,7 +71,7 @@ Vehicle.prototype.flee = function(target) {
         steer.limit(this.maxforce);
         return steer;
     } else {
-      return createVector (0, 0);
+        return createVector(0, 0);
     }
 
 }
