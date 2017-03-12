@@ -3,7 +3,8 @@
 var font;
 
 function preload() {
-  font = loadFont("AvenirNextLTPro-Demi.otf");
+    font = loadFont('RubikMonoOne-Regular.ttf');
+  //font = loadFont("AvenirNextLTPro-Demi.otf");
 }
 
 function setup() {
