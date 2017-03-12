@@ -3,6 +3,10 @@
 var font;
 var vehicles = [];
 
+//Palette colori
+//(255, 253, 130); // pastel yellow
+// (27, 153, 139); // jungle green
+
 function preload() {
     font = loadFont('RubikMonoOne-Regular.ttf');
   //font = loadFont("AvenirNextLTPro-Demi.otf");
@@ -37,6 +41,7 @@ function draw() {
   background(45,48,71); //gunmetal
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
+    v.behaviors();
     v.update();
     v.show();
   }
