@@ -8,8 +8,8 @@ function Vehicle(x, y) {
     this.acc = createVector();
     //size
     this.r = 8;
-    this.maxspeed = 10; // def 5
-    this.maxforce = 1;
+    this.maxspeed = 5; // def 5
+    this.maxforce = 0.3;
 }
 
 
@@ -17,7 +17,7 @@ Vehicle.prototype.behaviors = function() {
     var arrive = this.arrive(this.target);
     var mouse = createVector(mouseX, mouseY);
     var flee = this.flee(mouse);
-    
+
     arrive.mult(1);
     flee.mult(5);
 
