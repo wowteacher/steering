@@ -16,6 +16,10 @@ function Vehicle(x, y) {
 Vehicle.prototype.behaviors = function() {
     var arrive = this.seek(this.target);
     this.applyForce(arrive);
+
+    var mouse = createVector(mouseX, mouseY);
+    var flee = this.flee(mouse);
+    this.applyForce(flee);
 }
 
 Vehicle.prototype.applyForce = function(f) {
@@ -53,11 +57,18 @@ Vehicle.prototype.arrive = function(target) {
     return steer;
 }
 
-Vehicle.prototype.seek = function(target) {
+Vehicle.prototype.flee = function(target) {
     var desired = new p5.Vector.sub(target, this.pos);
-    desired.setMag(this.maxspeed);
-    // steer force
-    var steer = p5.Vector.sub(desired, this.vel);
-    steer.limit(this.maxforce);
-    return steer;
+    var d = desired.mag();
+    if (d < 50) {
+        desired.setMag(this.maxspeed);
+        desired.mult(-1); // si muove nella direzione opposta alla forza
+        // steer force
+        var steer = p5.Vector.sub(desired, this.vel);
+        steer.limit(this.maxforce);
+        return steer;
+    } else {
+      return createVector (0, 0);
+    }
+
 }
