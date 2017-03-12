@@ -22,7 +22,7 @@ function setup() {
   // text("Gina", 100, 200);
 
   //uso textToPoints per creare la scritta con i punti
-  var points = font.textToPoints ('Gina', 100, 200, 150);
+  var points = font.textToPoints ('Computerart', 100, 200, 130, {sampleFactor: 0.25});
 
   for (var i = 0; i < points.length; i++){
     var pt = points[i];
@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background(45,48,71, 10); //gunmetal
+  background(45,48,71, 150); //gunmetal
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
     v.behaviors();
